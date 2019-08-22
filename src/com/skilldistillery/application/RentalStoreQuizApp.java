@@ -52,4 +52,5 @@ public class RentalStoreQuizApp {
 	public void displayData (Store s) {
 		s.displayData();
 	}
+	
 }

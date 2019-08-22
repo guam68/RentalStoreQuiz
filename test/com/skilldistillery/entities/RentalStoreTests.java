@@ -1,6 +1,7 @@
 package com.skilldistillery.entities;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -27,7 +28,8 @@ class RentalStoreTests {
 		Customer c2 = new Customer(1, "First2", "Last2");
 		
 		store.addCustomer(c1);
-		store.addCustomer(c2);
+
+		assertFalse(store.addCustomer(c2));
 		assertEquals(1, store.getNumCustomer());
 	}
 

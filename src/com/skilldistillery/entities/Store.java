@@ -7,14 +7,14 @@ public class Store {
 	private Set<Customer> customers = new HashSet<Customer>();
 	private int id;
 	
-	public void addCustomer(Customer customer){
+	public boolean addCustomer(Customer customer){
 		for (Customer c : customers) {
 			if (customer.getId() == c.getId()) {
 				System.out.println("Customer is already registered");
-				return;
+				return false;
 			}
 		}
-		customers.add(customer);
+		return customers.add(customer);
 	}
 	
 	public int getNumCustomer() {
