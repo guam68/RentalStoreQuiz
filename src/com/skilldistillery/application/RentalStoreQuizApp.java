@@ -1,7 +1,5 @@
 package com.skilldistillery.application;
 
-import java.util.Set;
-
 import com.skilldistillery.entities.Customer;
 import com.skilldistillery.entities.Film;
 import com.skilldistillery.entities.Store;
@@ -40,22 +38,18 @@ public class RentalStoreQuizApp {
 	}
 
 	public Store createStore() {
-		// TODO: implement the method
-		return null;
+		return new Store();
 	}
 
 	public Customer createCustomer(String fn, String ln) {
-		// TODO: implement the method
-		return null;
+		return new Customer(fn, ln);
 	}
 
 	public void registerCustomerAtStore(Store st, Customer ct) {
-		// TODO: implement the method
-		
+			st.addCustomer(ct);
 	}
 	
 	public void displayData (Store s) {
-		// TODO: implement the method
-	
+		s.displayData();
 	}
 }

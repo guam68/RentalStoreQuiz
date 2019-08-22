@@ -1,6 +1,6 @@
 package com.skilldistillery.entities;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -8,23 +8,27 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 class RentalStoreTests {
-	// TODO: make necessary declarations
+	private Store store;
 
 	@BeforeEach
 	void setUp() throws Exception {
-		// TODO: implement
+		store = new Store();
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
-		// TODO: implement
-
+		store = null;
 	}
 
 	@Test
 	@DisplayName("test you can not register a duplicate customer")
 	void testCustomers() {
-		// TODO: implement the test
+		Customer c1 = new Customer(1, "First", "Last");
+		Customer c2 = new Customer(1, "First2", "Last2");
+		
+		store.addCustomer(c1);
+		store.addCustomer(c2);
+		assertEquals(1, store.getNumCustomer());
 	}
 
 }

@@ -4,12 +4,29 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class Store {
-	// TODO: each store has an id
+	private Set<Customer> customers = new HashSet<Customer>();
+	private int id;
 	
-	// TODO: each store has 0 or more unique Customers
+	public void addCustomer(Customer customer){
+		for (Customer c : customers) {
+			if (customer.getId() == c.getId()) {
+				System.out.println("Customer is already registered");
+				return;
+			}
+		}
+		customers.add(customer);
+	}
 	
-	// TODO: implement the required methods to:
-	//       * Add a customer (no duplicates allowed)
-	//       * Return the number of customers
-	//       * Display all data
+	public int getNumCustomer() {
+		return customers.size();
+	}
+	
+	public void displayData() {
+		System.out.println("Store ID: " + id);
+		System.out.println("Number of Customers: " + getNumCustomer());
+		for (Customer customer : customers) {
+			System.out.println(customer);
+		}
+	}
+
 }
